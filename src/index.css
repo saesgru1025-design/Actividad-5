@@ -1,0 +1,581 @@
+/* ==========================================================================
+   SERVIPLUS - ACTIVIDAD 5: REDISEÑO DE EXPERIENCIA DE USUARIO (UX/UI)
+   Prototipo 1 (Flat / Minimalismo), Prototipo 2 (Material / Neumorfismo), Prototipo 3 (DCU / Inclusivo)
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #1e293b;
+  background-color: #f8fafc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: all 0.2s ease;
+}
+
+/* Scrollbar sutil y profesional */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ==========================================================================
+   BARRA SUPERIOR GLOBAL: SELECTOR DE PROTOTIPOS ACADÉMICOS
+   ========================================================================== */
+.global-eval-bar {
+  background: #0f172a;
+  color: #f8fafc;
+  border-bottom: 1px solid #1e293b;
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+
+.eval-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.eval-badge-tag {
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.eval-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.eval-subtitle {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.eval-prototype-selector {
+  display: flex;
+  align-items: center;
+  background: #1e293b;
+  padding: 4px;
+  border-radius: 8px;
+  gap: 4px;
+}
+
+.proto-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #94a3b8;
+  border: 1px solid transparent;
+}
+
+.proto-tab-btn:hover {
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.proto-tab-btn.active {
+  background: #ffffff;
+  color: #0f172a;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.eval-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eval-info-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #334155;
+  color: #f1f5f9;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.eval-info-btn:hover {
+  background: #475569;
+}
+
+/* ==========================================================================
+   BANNER DE CONTEXTO ACADÉMICO PARA CADA PROTOTIPO
+   ========================================================================== */
+.prototype-academic-banner {
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  font-size: 13px;
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.banner-tag {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+.banner-text strong {
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS: PROTOTIPO 1 - FLAT DESIGN / MINIMALISMO
+   ========================================================================== */
+.proto1-flat-container {
+  font-family: 'Inter', sans-serif;
+  background-color: #ffffff;
+  color: #0f172a;
+  min-height: calc(100vh - 55px);
+  display: flex;
+  flex-direction: column;
+}
+
+.proto1-banner {
+  background-color: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+}
+
+.proto1-banner .banner-tag {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.proto1-header {
+  border-bottom: 1px solid #e2e8f0;
+  background: #ffffff;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.proto1-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #0f172a;
+}
+
+.proto1-logo-icon {
+  background: #2563eb;
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.proto1-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.proto1-nav-item {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #64748b;
+  border-bottom: 2px solid transparent;
+}
+
+.proto1-nav-item:hover {
+  color: #0f172a;
+}
+
+.proto1-nav-item.active {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+  font-weight: 600;
+}
+
+.proto1-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 24px;
+}
+
+.proto1-kpi {
+  border: 1px solid #e2e8f0;
+  padding: 20px;
+  background: #ffffff;
+}
+
+.proto1-kpi-value {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #0f172a;
+  margin: 6px 0 2px;
+}
+
+.proto1-btn-primary {
+  background: #2563eb;
+  color: #ffffff;
+  padding: 10px 18px;
+  font-weight: 500;
+  font-size: 14px;
+  border: 1px solid #2563eb;
+}
+
+.proto1-btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.proto1-btn-secondary {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  padding: 10px 18px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.proto1-btn-secondary:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.proto1-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.proto1-table th {
+  text-align: left;
+  padding: 12px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.proto1-table td {
+  padding: 16px;
+  font-size: 14px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #1e293b;
+}
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS: PROTOTIPO 2 - MATERIAL DESIGN 3 / NEUMORFISMO
+   ========================================================================== */
+.proto2-container {
+  min-height: calc(100vh - 55px);
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease;
+}
+
+/* Variante Material Design 3 */
+.proto2-material {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f7f9fd;
+  color: #1a1c1e;
+}
+
+.proto2-material .m3-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  border: none;
+  padding: 24px;
+}
+
+.proto2-material .m3-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.proto2-material .m3-tonal-container {
+  background-color: #e0e9f8;
+  color: #0b1d33;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.proto2-material .m3-fab {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: #005ac1;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 90, 193, 0.4);
+  z-index: 1000;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.proto2-material .m3-fab:hover {
+  transform: scale(1.06);
+}
+
+.proto2-material .m3-chip {
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid #74777f;
+  background: transparent;
+  color: #44474f;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.proto2-material .m3-chip.active {
+  background: #d8e2ff;
+  color: #001a41;
+  border-color: #d8e2ff;
+}
+
+/* Variante Neumorfismo (Soft UI) */
+.proto2-neumorphic {
+  font-family: 'Inter', sans-serif;
+  background-color: #e8ecf2;
+  color: #334155;
+}
+
+.proto2-neumorphic .neu-box {
+  background: #e8ecf2;
+  border-radius: 20px;
+  box-shadow: 8px 8px 18px #caced4, -8px -8px 18px #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 24px;
+}
+
+.proto2-neumorphic .neu-box-inset {
+  background: #e8ecf2;
+  border-radius: 16px;
+  box-shadow: inset 4px 4px 8px #caced4, inset -4px -4px 8px #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.proto2-neumorphic .neu-btn {
+  background: #e8ecf2;
+  border-radius: 12px;
+  box-shadow: 5px 5px 12px #caced4, -5px -5px 12px #ffffff;
+  padding: 10px 20px;
+  font-weight: 600;
+  color: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.15s ease;
+}
+
+.proto2-neumorphic .neu-btn:hover {
+  box-shadow: 3px 3px 6px #caced4, -3px -3px 6px #ffffff;
+}
+
+.proto2-neumorphic .neu-btn:active,
+.proto2-neumorphic .neu-btn.active {
+  box-shadow: inset 3px 3px 6px #caced4, inset -3px -3px 6px #ffffff;
+  color: #2563eb;
+}
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS: PROTOTIPO 3 - DCU + INCLUSIVO / EMOCIONAL
+   ========================================================================== */
+.proto3-container {
+  font-family: 'Lexend', -apple-system, BlinkMacSystemFont, sans-serif;
+  min-height: calc(100vh - 55px);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+/* Modo Estándar Amigable */
+.proto3-standard {
+  background-color: #fafbf9;
+  color: #1e293b;
+}
+
+.proto3-standard .inc-card {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 24px;
+}
+
+/* Modo Alto Contraste Oscuro */
+.proto3-high-contrast {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.proto3-high-contrast .inc-card {
+  background-color: #111111 !important;
+  border: 2px solid #fde047 !important;
+  color: #ffffff !important;
+}
+
+.proto3-high-contrast p,
+.proto3-high-contrast span,
+.proto3-high-contrast h1,
+.proto3-high-contrast h2,
+.proto3-high-contrast h3,
+.proto3-high-contrast h4,
+.proto3-high-contrast td,
+.proto3-high-contrast th {
+  color: #ffffff !important;
+}
+
+.proto3-high-contrast .highlight-text {
+  color: #fde047 !important;
+  font-weight: 700 !important;
+}
+
+.proto3-high-contrast button {
+  border: 2px solid #ffffff !important;
+}
+
+/* Accesibilidad: Escalares de Fuente */
+.font-scale-100 {
+  font-size: 16px;
+}
+.font-scale-115 {
+  font-size: 18.5px;
+}
+.font-scale-130 {
+  font-size: 21px;
+}
+
+/* Botones inclusivos grandes (Touch target >= 48px) */
+.inc-touch-btn {
+  min-height: 48px;
+  min-width: 48px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  outline-offset: 3px;
+}
+
+.inc-touch-btn:focus-visible {
+  outline: 4px solid #2563eb;
+}
+
+/* Componente Emocional: Burbuja Asistente Sofía */
+.sofia-speech-bubble {
+  background: #ecfdf5;
+  border: 2px solid #a7f3d0;
+  border-radius: 16px;
+  padding: 16px 20px;
+  color: #065f46;
+  position: relative;
+}
+
+.sofia-speech-bubble::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 28px;
+  border: 8px solid transparent;
+  border-top-color: #a7f3d0;
+}
+
+/* Modales Compartidos */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 10000;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 640px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  padding: 28px;
+}
